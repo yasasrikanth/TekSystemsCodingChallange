@@ -21,7 +21,6 @@ public class Order {
 	public void add(OrderLine orderline) throws Exception {
 
 		if (orderline == null) {
-			System.err.println("ERROR - Order is NULL");
 			throw new IllegalArgumentException("Order is NULL");
 		}
 		orderLines.add(orderline);

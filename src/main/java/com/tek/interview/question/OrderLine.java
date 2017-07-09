@@ -18,7 +18,6 @@ public class OrderLine {
 	 */
 	public OrderLine(Item item, int quantity) throws Exception {
 		if (item == null) {
-			System.err.println("ERROR - Item is NULL");
 			throw new Exception("Item is NULL");
 		}
 		assert quantity > 0;

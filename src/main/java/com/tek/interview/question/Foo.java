@@ -43,6 +43,11 @@ public class Foo {
 
 	public static void main(String[] args) throws Exception {
 		Calculator calc = new Calculator();
+		
+		calc.calculate(setOrders());
+	}
+
+	private static Map<String, Order> setOrders() throws Exception {
 		Map<String, Order> orderMap = new TreeMap<String, Order>();
 
 		Order order = new Order();
@@ -70,7 +75,6 @@ public class Foo {
 				new Item("box of imported chocolates", (float) 11.25), 1));
 
 		orderMap.put("Order 3", order);
-
-		calc.calculate(orderMap);
+		return orderMap;
 	}
 }
