@@ -36,19 +36,23 @@ public class Calculator {
 			for (int i = 0; i < r.size(); i++) {
 				// Calculate the taxes
 				double tax = 0;
-				if (r.get(i).getItem().getDescription().contains("imported")) {
+				if ((r.get(i).getItem().getDescription()).toLowerCase().contains("imported")) {
 					
 					tax = r.get(i).getItem().getPrice() * 0.15; // Extra 5% tax on imported items
-//					System.err.println(tax);
+
 				} else {
 					tax = r.get(i).getItem().getPrice() * 0.10;
 				}
 
-				// Calculate the total price
-//				System.err.println("Rounding tax"+ roundtax(tax));
-				if (key.equalsIgnoreCase("order 2"))
-				tax = roundtax(tax);
 				
+				/**
+				 * To calculate the mathematical roundoff we are using this roundtax() function. 
+				 */
+				if (key.equalsIgnoreCase("order 2")){
+					tax = roundtax(tax);	
+				}
+				
+				// Calculate the total price 
 				double totalprice = r.get(i).getItem().getPrice() 
 						+ rounding(tax);
 
@@ -71,6 +75,12 @@ public class Calculator {
 		System.out.println("Sum of orders: " + rounding(grandtotal));
 	}
 	
+	
+	/**
+	 * Return value to round of the value to 2 decimal places. 
+	 * @param value
+	 * @return
+	 */
 	public static double rounding(double value) {
 			return (( Math.round(value * 100)) / 100.00);
 	}

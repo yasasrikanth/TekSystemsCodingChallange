@@ -66,7 +66,7 @@ public class Foo {
 		orderMap.put("Order 2", order);
 
 		order = new Order();
-		order.add(new OrderLine(new Item("imported bottle of perfume",
+		order.add(new OrderLine(new Item("Imported bottle of perfume",
 				(float) 27.99), 1));
 		order.add(new OrderLine(new Item("bottle of perfume", (float) 18.99), 1));
 		order.add(new OrderLine(new Item("packet of headache pills", (float) 9.75),
